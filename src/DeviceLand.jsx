@@ -32,7 +32,7 @@ function DeviceLand() {
                   Discover
                </h4>
                <div className="phone-container">
-                  <img className='iphone-png' src="public\—Pngtree—iphone 14 vector illustrations vectors_15424528.png" alt="png of iphone" />
+                  <img className='iphone-png' src="\—Pngtree—iphone 14 vector illustrations vectors_15424528.png" alt="png of iphone" />
                </div>
                <h1 className="find-latest">Find The Latest Device</h1>
             </div>
