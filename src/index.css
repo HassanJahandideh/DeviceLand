@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz@0,14..32;1,14..32&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;1,100&display=swap');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+:root {
+   --font-main: 'Inter', sans-serif;
+   --font-light: "Raleway", sans-serif;
+}
+/* .main-container{
+
+}
+.inside-container{
+
+} */
+nav{
+   position: fixed;
+   top: 0;
+   left: 0;
+   right: 0;
+   z-index: 10;
+   background-color: rgb(10, 10, 10);
+   height: 50px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 0 20px;
+}
+.brand-name{
+   color: white;
+   font-family: var(--font-main);
+}
+button{
+   cursor: pointer;
+}
+.menu-icon{
+   display: flex;
+   float: right;
+   border: none;
+   background-color: transparent;
+   color: white;
+
+}
+.menu-icon .fa-bars{
+   transition: transform 0.3s ease;
+}
+.menu-icon:hover .fa-bars{
+   transform: rotate(90deg);
+}
+.menu-icon-animation{
+   transition: transform 0.4s ease;
+}
+.toggle-nav{
+   position: absolute;
+   top: 50px;
+   right: 0;
+   background: rgb(138, 135, 135);
+   color: black;
+   padding: 1rem;
+   border-radius: 8px;
+   width: 100%;
+   height: 27%;
+   border-radius: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
+   transition: transform 0.5s ease, opacity 0.5s ease;
+   z-index: 1000;
+}
+
+ul{
+   list-style: none;
+}
+.toggle-links{
+   float: right;
+   text-decoration: none;
+   color: black;
+   font-family: var(--font-main);
+   opacity: 0;
+   animation: fadeIn 0.15s forwards;
+   transform: translateX(20px);
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+      transform: translateX(20px);
+   }
+   100% {
+      opacity: 1;
+      transform: translateX(0);
+   }
+ }
+ .toggle-nav .toggle-links:nth-child(1) {
+   animation-delay: 0.2s;
+ }
+ 
+ .toggle-nav .toggle-links:nth-child(2) {
+   animation-delay: 0.4s;
+ }
+ 
+ .toggle-nav .toggle-links:nth-child(3) {
+   animation-delay: 0.6s;
+ }
+ 
+.toggle-nav.open{
+   transform: translateX(0);
+   opacity: 1;
+}
+.toggle-nav.close{
+   transform: translateX(100%); /* نوبار میره بیرون */
+   opacity: 0;
+   overflow: hidden;
+}
+.discovery-container{
+   height: 380px;
+   background-color: #000000;
+   font-family: var(--font-main);
+   color: white;
+   width: 100%;
+   position: relative;
+   overflow: hidden;
+}
+.discovery-text{
+   padding-top: 4.5rem;
+   font-family: var(--font-light);
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   text-align: center;
+   font-size: 1.2rem;
+}
+.phone-container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding-top: 4.5rem;
+   position: relative;
+}
+.iphone-png {
+   width: 30em;
+   height: 30em;
+   position: absolute; /* عکس رو از حالت flex خارج می‌کنیم */
+   top: 450%;
+   left: 50%;
+   transform: translate(-50%, -50%); /* این خط باعث میشه عکس در مرکز قرار بگیره */
+   animation: discover-fadeIn 1s ease-out forwards;
+}
+
+.find-latest {
+   position: absolute; /* متن رو هم روی عکس قرار می‌دهیم */
+   top: 72%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 3rem;
+   text-align: center;
+   pointer-events: none;
+   font-family: var(--font-main);
+   animation: discover-fadeIn 1s ease-out forwards;
+}
+@keyframes discover-fadeIn{
+   0% {
+      opacity: 0;
+      transform: translate(-50%, -50%) translateY(20px);
+   }
+   100% {
+   opacity: 1;
+   transform: translate(-50%, -50%) translateY(0);
+   }
+}
+
+/* @media only screen and (max-width: 1200px) {
+   .menu-icon{
+      display: none;
+   }
+} */
