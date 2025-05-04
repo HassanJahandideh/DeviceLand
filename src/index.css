@@ -69,6 +69,7 @@ button{
    gap: 1.5rem;
    transition: transform 0.5s ease, opacity 0.5s ease;
    z-index: 1000;
+   overflow-x: hidden;
 }
 
 ul{
@@ -111,7 +112,6 @@ ul{
    opacity: 1;
 }
 .toggle-nav.close{
-   transform: translateX(100%); /* نوبار میره بیرون */
    opacity: 0;
    overflow: hidden;
 }
