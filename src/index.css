@@ -62,7 +62,7 @@ button{
    padding: 1rem;
    border-radius: 8px;
    width: 100%;
-   height: 27%;
+   height: 140px;
    border-radius: 0;
    display: flex;
    flex-direction: column;
@@ -191,8 +191,27 @@ select{
    padding: 7px;
    border-radius: 5px;
    width: min(44vw, 176px);
+   font-family: var(--font-main);
 }
+.product-container{
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   padding-left: 1rem;
+}
+.product-image{
+   
+}
+.product-details{
+   border: none;
+   background-color: turquoise;
+   width: 44.1vw;
+}
+.product-name{
 
+}
+.product-price{
+
+}
 /* @media only screen and (max-width: 1200px) {
    .menu-icon{
       display: none;

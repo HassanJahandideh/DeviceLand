@@ -59,6 +59,31 @@ function DeviceLand() {
                   </select>
                </div>
             </div>
+            {/* products */}
+            
+            <div className="product-container">
+               <div className="product-details">   
+                  <img src="" alt="" className="product-image" />
+
+               
+                  <h2 className="product-name">Iphone 14 pro</h2>
+                  <p className="product-price">$999</p>
+               </div>
+
+               {/* <div className="product-extra-detail" hidden>
+                  <p><strong>Storage:</strong> 128GB</p>
+                  <p><strong>Color:</strong> Space Black</p>
+                  <p><strong>Chip:</strong> A16 Bionic</p>
+               </div> */}
+
+<div className="product-details">   
+                  <img src="" alt="" className="product-image" />
+
+               
+                  <h2 className="product-name">Iphone 14 pro</h2>
+                  <p className="product-price">$999</p>
+               </div>
+            </div>
          </div>
       </div>
    );
