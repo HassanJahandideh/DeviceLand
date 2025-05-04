@@ -10,10 +10,10 @@
    --font-main: 'Inter', sans-serif;
    --font-light: "Raleway", sans-serif;
 }
-/* .main-container{
-
+.main-container{
+   overflow-x: hidden;
 }
-.inside-container{
+/* .inside-container{
 
 } */
 nav{
@@ -171,6 +171,26 @@ ul{
    opacity: 1;
    transform: translate(-50%, -50%) translateY(0);
    }
+}
+
+.filters-container{
+   padding: 1rem;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 1rem;
+   font-family: var(--font-light);
+}
+.discovery{
+   font-family: var(--font-main);
+   padding-left: 0.9rem;
+   padding-top: 1.2rem;
+}
+select{
+   border: 1px solid #ccc;
+   padding: 7px;
+   border-radius: 5px;
+   width: min(44vw, 176px);
 }
 
 /* @media only screen and (max-width: 1200px) {
