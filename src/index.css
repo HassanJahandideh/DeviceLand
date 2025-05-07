@@ -10,6 +10,9 @@
    --font-main: 'Inter', sans-serif;
    --font-light: "Raleway", sans-serif;
 }
+body{
+   background-color: rgb(245, 245, 245);
+}
 .main-container{
    overflow-x: hidden;
 }
@@ -198,19 +201,38 @@ select{
    grid-template-columns: repeat(2, 1fr);
    padding-left: 1rem;
 }
+.product-image-container{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0.5rem;
+}
 .product-image{
-   
+   width: 170px;
 }
 .product-details{
    border: none;
-   background-color: turquoise;
+   background-color: white;
    width: 44.1vw;
 }
+.product-company{
+   font-family: var(--font-main);
+   color: rgba(0, 0, 0, 0.658);
+   font-size: 1rem;
+   text-align: center;
+}
 .product-name{
-
+   font-family: var(--font-main);
+   font-size: 1rem;
+   padding: 0.5rem 0.5rem;
+   text-align: left;
 }
 .product-price{
-
+   font-family: var(--font-main);
+   color: rgba(0, 0, 0, 0.658);
+   font-size: 1rem;
+   padding-left: 0.5rem;
+   text-align: left;
 }
 /* @media only screen and (max-width: 1200px) {
    .menu-icon{
