@@ -32,7 +32,7 @@ function DeviceLand() {
                   Discover
                </h4>
                <div className="phone-container">
-                  <img className='iphone-png' src="/image/—Pngtree—iphone 14 vector illustrations vectors_15424528.png" />
+            <img className='iphone-png' src="image/iPhoneFrame.png" alt="iPhone 14" />
                </div>
                <h1 className="find-latest">Find The Latest Device</h1>
             </div>
@@ -64,7 +64,7 @@ function DeviceLand() {
             <div className="product-container">
                <div className="product-details">  
                   <div className="product-image-container">
-                     <img src="/image/16proMax.jpg" alt="iphone" className="product-image" />
+                     <img src="image/16proMax.jpg" alt="iPhone 16 Pro Max" className="product-image" />
                   </div>
                   <h2 className="product-company">APPLE</h2>
                   <h2 className="product-name">iPhone 16 Pro Max</h2>
