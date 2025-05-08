@@ -215,6 +215,7 @@ select{
    background-color: white;
    width: 44.1vw;
    border-radius: 8px;
+   margin-bottom: 1rem;
 }
 .product-company{
    font-family: var(--font-main);

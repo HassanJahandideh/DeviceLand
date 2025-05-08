@@ -1,3 +1,4 @@
+import products from './data/products.js';
 import { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -62,29 +63,23 @@ function DeviceLand() {
             {/* products */}
             
             <div className="product-container">
-               <div className="product-details">  
+               {products.map((product) => (
+                  <div className="product-details" key={product.id}>  
                   <div className="product-image-container">
-                     <img src="image/16proMax.jpg" alt="iPhone 16 Pro Max" className="product-image" />
+                     <img src={product.image} alt="iPhone 16 Pro Max" className="product-image" />
                   </div>
-                  <h2 className="product-company">APPLE</h2>
-                  <h2 className="product-name">iPhone 16 Pro Max</h2>
-                  <p className="product-price">$999</p>
+                     <h2 className="product-company">{product.company}</h2>
+                     <h2 className="product-name">{product.name}</h2>
+                     <p className="product-price">{product.price}</p>
                </div>
+               ))}
+               
 
                {/* <div className="product-extra-detail" hidden>
                   <p><strong>Storage:</strong> 128GB</p>
                   <p><strong>Color:</strong> Space Black</p>
                   <p><strong>Chip:</strong> A16 Bionic</p>
                </div> */}
-
-<div className="product-details">  
-                  <div className="product-image-container">
-                     <img src="image/s25Ultra.jpg" alt="iPhone 16 Pro Max" className="product-image" />
-                  </div>
-                  <h2 className="product-company">ُSAMSUNG</h2>
-                  <h2 className="product-name">Galaxy S25 Ultra</h2>
-                  <p className="product-price">$999</p>
-               </div>
             </div>
          </div>
       </div>
