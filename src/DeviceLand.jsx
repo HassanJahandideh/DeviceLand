@@ -77,11 +77,12 @@ function DeviceLand() {
                   <p><strong>Chip:</strong> A16 Bionic</p>
                </div> */}
 
-<div className="product-details">   
-                  <img src="" alt="" className="product-image" />
-
-               
-                  <h2 className="product-name">Iphone 14 pro</h2>
+<div className="product-details">  
+                  <div className="product-image-container">
+                     <img src="image/s25Ultra.jpg" alt="iPhone 16 Pro Max" className="product-image" />
+                  </div>
+                  <h2 className="product-company">ُSAMSUNG</h2>
+                  <h2 className="product-name">Galaxy S25 Ultra</h2>
                   <p className="product-price">$999</p>
                </div>
             </div>

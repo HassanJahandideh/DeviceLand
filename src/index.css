@@ -214,6 +214,7 @@ select{
    border: none;
    background-color: white;
    width: 44.1vw;
+   border-radius: 8px;
 }
 .product-company{
    font-family: var(--font-main);
