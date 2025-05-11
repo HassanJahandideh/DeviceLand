@@ -2,7 +2,7 @@ import products from './data/products.js';
 import { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faXmark, faStar } from '@fortawesome/free-solid-svg-icons';
 
 function DeviceLand() {
    const [isNavOpen, setIsNavOpen] = useState(false);
@@ -64,22 +64,22 @@ function DeviceLand() {
             
             <div className="product-container">
                {products.map((product) => (
-                  <div className="product-details" key={product.id}>  
-                  <div className="product-image-container">
-                     <img src={product.image} alt="iPhone 16 Pro Max" className="product-image" />
-                  </div>
-                     <h2 className="product-company">{product.company}</h2>
+                  <div className="product-details"
+                     key={product.id}>  
+                     <div className="product-image-container">
+                        <img src={product.image} alt="iPhone 16 Pro Max" className="product-image" />
+                     </div>
                      <h2 className="product-name">{product.name}</h2>
+                     <p className="small-detail">6.9-inch display</p>
+                     <div className="star">
+                        {[...Array(5)].map((_, i) => (
+                        <FontAwesomeIcon key={i} icon={faStar} style={{ color: '#FFD700' }} />
+                     ))}
+                     </div>
                      <p className="product-price">{product.price}</p>
-               </div>
+                     <button className="addtocart">Add to Cart</button>
+                  </div>
                ))}
-               
-
-               {/* <div className="product-extra-detail" hidden>
-                  <p><strong>Storage:</strong> 128GB</p>
-                  <p><strong>Color:</strong> Space Black</p>
-                  <p><strong>Chip:</strong> A16 Bionic</p>
-               </div> */}
             </div>
          </div>
       </div>
