@@ -1,4 +1,7 @@
-import products from './data/products.js';
+import products  from './data/products.js';
+import { features } from './data/features.js';
+import { reviews } from './data/features.js';
+
 import { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -69,6 +72,8 @@ function DeviceLand() {
                      <div className="product-image-container">
                         <img src={product.image} alt="iPhone 16 Pro Max" className="product-image" />
                      </div>
+                     <h2 className="product-company">{product.company}</h2>
+
                      <h2 className="product-name">{product.name}</h2>
                      <p className="small-detail">6.9-inch display</p>
                      <div className="star">
@@ -81,6 +86,44 @@ function DeviceLand() {
                   </div>
                ))}
             </div>
+            <h1 className="why-dl">
+               Why DeviceLand
+            </h1>
+            <section className="features-container">
+               {features.map((feature) => (
+                  <div className="features"
+                     key={feature.id}>
+                     <FontAwesomeIcon icon={feature.icon} size="3x" className="feature-icon" />
+                     <h2>{feature.title}</h2>
+                  </div>
+               ))}
+            </section>
+            <h2 className="user-review-h2">
+               User Reviews
+            </h2>
+            <section className="reviews-container">
+               {reviews.map((review) => (
+                  <div className="reviews" key={review.id}>
+                     <img src={review.image} alt="user avatar" className="user-avatar" />
+
+                     <div className="review-content">
+                        <p className="user-name">
+                           {review.name}
+                        </p>
+
+                        <div className="user-star">
+                        {[...Array(5)].map((_, i) => (
+                        <FontAwesomeIcon key={i} icon={faStar} style={{ color: '#FFD700' }} />
+                        ))}
+                        </div>
+
+                        <p className="user-text">
+                           {review.text}
+                        </p>
+                     </div>
+                  </div>
+               ))}
+            </section>
          </div>
       </div>
    );
