@@ -6,6 +6,7 @@ import { useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark, faStar } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faTwitter, faThreads } from '@fortawesome/free-brands-svg-icons';
 
 function DeviceLand() {
    const [isNavOpen, setIsNavOpen] = useState(false);
@@ -124,6 +125,22 @@ function DeviceLand() {
                   </div>
                ))}
             </section>
+            <footer>
+               <h2 className="footer-logo">DeviceLand</h2>
+               <p className="year">@2025</p>
+               
+               <div className="social-container">
+                  <a href="">
+                     <FontAwesomeIcon className='footer-social' icon={faInstagram} size="lg" style={{ color: "#fff" }} />
+                  </a>
+                  <a href="">
+                     <FontAwesomeIcon className='footer-social' icon={faTwitter} size="lg" style={{ color: "#fff" }} />
+                  </a>
+                  <a href="">
+                     <FontAwesomeIcon className='footer-social' icon={faThreads} size="lg" style={{ color: "#fff" }} />
+                  </a>
+               </div>
+            </footer>
          </div>
       </div>
    );
