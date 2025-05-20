@@ -9,11 +9,30 @@ import { faBars, faXmark, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faInstagram, faTwitter, faThreads } from '@fortawesome/free-brands-svg-icons';
 
 function DeviceLand() {
+   // toggle the navigation bar
    const [isNavOpen, setIsNavOpen] = useState(false);
    const toggleNav = () => {
       setIsNavOpen(prev => !prev);
    }
 
+   // category filter
+   const [filterCategory, setFilterCategory] = useState('all');
+   // sort filter
+   const [sortBy, setSortBy] = useState('');
+   
+   const filterAndSortedProducts = products
+      .filter((product) => {
+         return filterCategory === 'all' || product.category === filterCategory;
+      })
+      .sort((a, b) => {
+         if (sortBy === 'priceLowHigh') {
+            return parseFloat(a.price) - parseFloat(b.price);
+         }
+         if (sortBy === 'priceHighLow') {
+            return parseFloat(b.price) - parseFloat(a.price);
+         }
+         return 0;
+      });
    return (
       <div className="main-container">
          <div className="inside-container">
@@ -46,7 +65,8 @@ function DeviceLand() {
             <div className="filters-container">
                
                <div className="filter">
-                  <select defaultValue="" id="category">
+                  <select defaultValue="" value={filterCategory}
+                  onChange={(e) => setFilterCategory(e.target.value)}>
                      <option value="" disabled>Category</option>
                      <option value="all">All</option>
                      <option value="phones">Phones</option>
@@ -56,7 +76,8 @@ function DeviceLand() {
                </div>
 
                <div className="filter">
-                  <select defaultValue="" id="sort">
+                  <select defaultValue="" value={sortBy}
+                     onChange={(e) => setSortBy(e.target.value)}>
                      <option value="" disabled>Sort By</option>
                      <option value="latest">Latest</option>
                      <option value="priceLowHigh">Price: Low to High</option>
@@ -67,7 +88,7 @@ function DeviceLand() {
             {/* products */}
             
             <div className="product-container">
-               {products.map((product) => (
+               {filterAndSortedProducts.map((product) => (
                   <div className="product-details"
                      key={product.id}>  
                      <div className="product-image-container">
@@ -82,7 +103,7 @@ function DeviceLand() {
                         <FontAwesomeIcon key={i} icon={faStar} style={{ color: '#FFD700' }} />
                      ))}
                      </div>
-                     <p className="product-price">{product.price}</p>
+                     <p className="product-price">${product.price}</p>
                      <button className="addtocart">Add to Cart</button>
                   </div>
                ))}
