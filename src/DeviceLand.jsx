@@ -36,27 +36,35 @@ function DeviceLand() {
    return (
       <div className="main-container">
          <div className="inside-container">
-            <nav>
-               <h1 className="brand-name">
-                  DeviceLand
-               </h1>
+            <nav className="navbar">
+               <h1 className="brand-name">DeviceLand</h1>
 
                <button className="menu-icon" aria-label="Open menu" onClick={toggleNav}>
-                  <FontAwesomeIcon icon={isNavOpen ? faXmark : faBars} size="2x" className='menu-icon-animation' />
+                  <FontAwesomeIcon icon={isNavOpen ? faXmark : faBars} size="2x" className="menu-icon-animation" />
                </button>
+
+               <ul className="nav-links-desktop">
+                  <li><a className="toggle-links" href="#products">Products</a></li>
+                  <li><a className="toggle-links" href="#contact">Contact</a></li>
+                  <li><a className="toggle-links" href="#about">About</a></li>
+               </ul>
             </nav>
-               <ul className={isNavOpen ? 'toggle-nav open' : 'toggle-nav close'}>
-                     <li><a className='toggle-links'  href="#products">Products</a></li>
-                     <li><a className='toggle-links' href="#contact">Contact</a></li>
-                     <li><a className='toggle-links' href="#about">About</a></li>
-                  </ul>
+
+         {/* منوی موبایلی بازشو */}
+            <ul className={isNavOpen ? 'toggle-nav open' : 'toggle-nav close'}>
+            <li><a className="toggle-links" href="#products">Products</a></li>
+            <li><a className="toggle-links" href="#contact">Contact</a></li>
+            <li><a className="toggle-links" href="#about">About</a></li>
+            </ul>
             {/* Discovery section */}
             <div className="discovery-container">
                <h4 className="discovery-text">
                   Discover
                </h4>
                <div className="phone-container">
-            <img className='iphone-png' src="image/iPhoneFrame.png" alt="iPhone 14" />
+                  <img className='iphone-png' src="image/iPhoneFrame.png" alt="iPhone 14" />
+                  <img src="image/iPadMocup.png" alt="device" className="ipad" />
+
                </div>
                <h1 className="find-latest">Find The Latest Device</h1>
             </div>

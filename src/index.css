@@ -24,7 +24,7 @@ body{
 /* .inside-container{
 
 } */
-nav{
+.navbar{
    position: fixed;
    top: 0;
    left: 0;
@@ -33,9 +33,12 @@ nav{
    background-color: rgb(10, 10, 10);
    height: 50px;
    display: flex;
-   justify-content: space-between;
+   justify-content: space-between; /* فاصله بین برند و آیکن منو */
    align-items: center;
    padding: 0 20px;
+}
+.nav-links-desktop{
+   display: none;
 }
 .brand-name{
    color: white;
@@ -45,12 +48,12 @@ button{
    cursor: pointer;
 }
 .menu-icon{
-   display: flex;
-   float: right;
+   background: transparent;
    border: none;
-   background-color: transparent;
    color: white;
-
+   cursor: pointer;
+   display: block;
+   margin-left: auto;
 }
 .menu-icon .fa-bars{
    transition: transform 0.3s ease;
@@ -152,13 +155,18 @@ ul{
 .iphone-png {
    width: 30em;
    height: 30em;
-   position: absolute; /* عکس رو از حالت flex خارج می‌کنیم */
+   position: absolute;
    top: 450%;
    left: 50%;
    transform: translate(-50%, -50%); /* این خط باعث میشه عکس در مرکز قرار بگیره */
    animation: discover-fadeIn 1s ease-out forwards;
 }
-
+.ipad{
+   display: none;
+}
+.laptop{
+   display: none;
+}
 .find-latest {
    position: absolute; /* متن رو هم روی عکس قرار می‌دهیم */
    top: 72%;
@@ -204,7 +212,11 @@ select{
 .product-container{
    display: grid;
    grid-template-columns: repeat(2, 1fr);
-   padding-left: 1rem;
+   gap: 1rem;
+   justify-content: center; /* مهم: وسط‌چین کردن ستون‌ها */
+   align-items: center; /* مهم: وسط‌چین کردن ردیف‌ها */
+   padding-top: 1rem;
+   padding-left: 8px;
 }
 .product-image-container{
    display: flex;
@@ -219,7 +231,7 @@ select{
 .product-details{
    border: none;
    background-color: white;
-   width: 44.1vw;
+   width: 95%;
    border-radius: 8px;
    margin-bottom: 1rem;
    box-shadow: 0px 0px 12px -5px rgba(0,0,0,0.7);
@@ -278,17 +290,28 @@ select{
    padding-top: 1rem;
    font-family: var(--font-main);
 }
-.features-container{
+.features-container {
    padding-top: 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2rem;
 }
-.features{
+
+.features {
    display: flex;
    align-items: center;
-   justify-content: space-between;
-   padding: 0 2rem;
-   gap: 2rem;
+   justify-content: center;
+   gap: 1rem;
+   padding: 1rem;
    font-family: var(--font-main);
-   padding-bottom: 2rem;   
+   border: 1px solid rgba(0, 0, 0, 0.1);
+   border-radius: 12px;
+   box-shadow: 0px 0px 12px -6px rgba(0,0,0,0.3);
+   width: 90%;
+   max-width: 400px;
+   background: white;
+   text-align: left;
 }
 .feature-icon{
    font-size: 2.5rem;
@@ -298,16 +321,22 @@ select{
    padding:  2rem 2rem;
    font-family: var(--font-main);
 }
-.reviews-container{
-   padding-right: 2rem;
-   margin-top: -0.5rem;
+.reviews-container {
+   padding: 1rem 2rem;
+   display: flex;
+   flex-direction: column;
+   gap: 1.5rem;
 }
 .reviews{
    display: flex;
    flex-direction: row;
    align-items: flex-start;
    direction: rtl;
-   padding-bottom: 2rem;
+   gap: 1rem;
+   padding: 1rem;
+   background-color: #f9f9f9;
+   border-radius: 10px;
+   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 .user-avatar{
    border-radius: 50%;
@@ -354,8 +383,139 @@ footer{
    padding-right: 1rem;
 }
 
-/* @media only screen and (max-width: 1200px) {
-   .menu-icon{
+@media only screen and (min-width: 767px) {
+  .nav-links-desktop {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .nav-links-desktop li {
+    list-style: none;
+  }
+
+  .nav-links-desktop a {
+    color: white;
+    text-decoration: none;
+    font-family: var(--font-main);
+    font-size: 16px;
+  }
+
+  /* ❌ دکمه منوی موبایل حذف شود در صفحه بزرگ‌تر */
+  .menu-icon {
+    display: none;
+  }
+  .iphone-png{
+   display: none;
+  }
+  .ipad{
+   display: block;
+   width: 42.3rem;
+  }
+  .filters-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.5rem 2rem;
+  }
+
+  .discovery {
+    padding-left: 2rem;
+    font-size: 1.8rem;
+  }
+
+  select {
+    width: 200px;
+    font-size: 1rem;
+  }
+  .product-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+   }
+   .product-details {
+      /* width: 220px; */
+   }
+
+  .product-image {
+    width: 160px;
+  }
+  .features-container {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+   }
+
+   .features {
+      width: 280px;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+   }
+
+   .features h2 {
+      font-size: 1.1rem;
+   }
+   .reviews-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+   }
+
+   .reviews {
+      flex-direction: row;
+      padding: 1.2rem;
+   }
+
+   .review-content {
+      padding-right: 1rem;
+   }
+}
+@media only screen and (min-width: 1024px) {
+   .iphone-png{
       display: none;
    }
-} */
+   .laptop{
+      display: block;
+      width: 42.3rem;
+   }
+   .filters-container {
+    gap: 2.5rem;
+    padding: 2rem 3rem;
+  }
+
+  .discovery {
+    font-size: 2rem;
+  }
+
+  select {
+    width: 220px;
+    font-size: 1.05rem;
+  }
+  .product-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    padding-left: 2.2rem;
+    justify-content: center;
+    align-items: center;
+    padding-left: 1.5rem;
+  }
+
+  .product-details {
+      /* width: 240px; */
+  }
+
+  .product-image {
+    width: 120px;
+  }
+
+  .product-name {
+    font-size: 1.1rem;
+  }
+
+  .addtocart {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
